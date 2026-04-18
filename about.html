@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="navfoot.css">
+  <link rel="stylesheet" href="about.css">
+  <title>About - ANYO Woodcrafts</title>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <div class="logo-icon">A</div>
+    <span>ANYO Woodcrafts</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
+
+<section class="about-hero">
+  <h1>About Us</h1>
+  <p>Learn more about our story, mission, and values</p>
+</section>
+
+<section class="about-section">
+  <div class="about-grid">
+
+    <div class="about-text">
+      <h2>Our Story</h2>
+      <p>
+        ANYO WOODCRAFT is an online retail business established in 2020 and
+        based in Taytay, Rizal, Philippines. What started as a passion project
+        has grown into a trusted source for personalized wooden gifts and
+        laser-engraved products.
+      </p>
+      <p>
+        The company specializes in creating meaningful handcrafted gifts for
+        birthdays, weddings, anniversaries, graduations, and corporate events.
+        Each piece tells a story and carries the warmth of natural wood combined
+        with modern laser engraving technology.
+      </p>
+      <p>
+        We offer custom wooden souvenirs, corporate giveaways, and meaningful
+        handcrafted gifts tailored to customer preferences. Whether you're
+        looking for a thoughtful personal gift or bulk corporate orders, we bring
+        your vision to life.
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="IMAGES/woodcraft1.jpg" alt="">
+    </div>
+
+  </div>
+</section>
+
+<section class="about-section alt">
+  <div class="about-grid">
+
+    <div class="about-image">
+      <img src="IMAGES/woodcraft2.jpg" alt="">
+    </div>
+
+    <div class="about-text">
+      <h2>Our Mission</h2>
+      <p>
+        With a strong focus on quality craftsmanship and customization, ANYO
+        WOODCRAFT provides affordable yet memorable gift solutions for students,
+        professionals, families, event organizers, and corporate clients
+        nationwide.
+      </p>
+      <p>
+        The brand primarily operates through Shopee and Facebook and aims to
+        expand its presence by building a dedicated website to improve product
+        showcasing and customer relationships.
+      </p>
+      <p>
+        Our goal is to make personalized wooden gifts accessible to everyone,
+        ensuring that every special moment can be celebrated with a unique,
+        handcrafted treasure that will be cherished for years to come.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="values">
+  <h2>Our Values</h2>
+  <p class="subtitle">What makes ANYO Woodcrafts special</p>
+
+  <div class="values-grid">
+
+    <div class="value-card">
+  <div class="icon"><i class="fa-regular fa-heart"></i></div>
+  <h3>Craftsmanship</h3>
+  <p>Every piece is handcrafted with attention to detail and love for the art of woodworking</p>
+</div>
+
+<div class="value-card">
+  <div class="icon"><i class="fa-solid fa-award"></i></div>
+  <h3>Quality</h3>
+  <p>We use premium materials and laser engraving technology to ensure lasting beauty</p>
+</div>
+
+<div class="value-card">
+  <div class="icon"><i class="fa-solid fa-users"></i></div>
+  <h3>Personalization</h3>
+  <p>Each item is customized to your preferences, making every gift truly unique</p>
+</div>
+
+<div class="value-card">
+  <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+  <h3>Affordability</h3>
+  <p>Premium quality doesn't have to break the bank - meaningful gifts for everyone</p>
+</div>
+
+  </div>
+</section>
+
+<section class="cta-about fade-in">
+  <div class="cta-content">
+    <h1>Ready to Create Something Special?</h1>
+    <p>Let's bring your vision to life with our handcrafted wooden gifts</p>
+
+    <div class="cta-buttons">
+      <a href="products.html" class="btn primary">Browse Products</a>
+      <a href="contact.html" class="btn outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <span>ANYO Woodcrafts</span>
+      </div>
+      <p>
+        Personalized wooden gifts and laser-engraved treasures
+        for your special moments
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Connect With Us</h3>
+      <p>Taytay, Rizal, Philippines</p>
+
+      <div class="socials">
+        <a href="https://www.facebook.com/ANYOwoodcrafts" target="_blank" class="circle"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://shopee.ph/anyocrafts" target="_blank" class="circle"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 ANYO Woodcrafts. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const elements = document.querySelectorAll(".fade-in");
+
+function showOnScroll() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  elements.forEach(el => {
+    const boxTop = el.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      el.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", showOnScroll);
+</script>
+
+</body>
+</html>
