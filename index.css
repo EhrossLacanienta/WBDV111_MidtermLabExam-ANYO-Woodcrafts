@@ -1,4 +1,4 @@
-/* ===== HERO ===== */
+/* ===== HERO SECTION ===== */
 .hero {
   height: calc(100vh - 90px);
   position: relative;
@@ -71,6 +71,7 @@
   transform: translateY(-2px);
 }
 
+/* scroll indicator */
 .hero::after {
   content: "⌄";
   position: absolute;
@@ -83,7 +84,7 @@
 }
 
 
-/* ===== ABOUT ===== */
+/* ===== ABOUT SECTION ===== */
 .about {
   background-color: #FAF3F4;
   padding: 70px 100px;
@@ -126,7 +127,7 @@
 }
 
 
-/* ===== FEATURED ===== */
+/* ===== FEATURED SECTION ===== */
 .featured {
   background: #f6f6f6;
   padding: 90px 40px;
@@ -202,7 +203,8 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 1000px) {
+/* featured responsive */
+@media (max-width: 1024px) {
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -210,12 +212,17 @@
 
 @media (max-width: 600px) {
   .featured-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .featured-card img {
+    height: 180px;
   }
 }
 
 
-/* ===== OCCASION ===== */
+/* ===== OCCASION SECTION ===== */
 .occasion-section {
   background: #f6f0f1;
   padding: 100px 20px;
@@ -236,14 +243,15 @@
 }
 
 .card-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 .card {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   padding: 35px 20px;
   border-radius: 20px;
   background: #fff;
@@ -264,28 +272,67 @@
   transform: translateY(-8px);
 }
 
+/* occasion color variants */
 .wedding { background: #f3e8ec; }
-.wedding i,
-.wedding h3 { color: #e91e63; }
+.wedding i, .wedding h3 { color: #e91e63; }
 
 .birthday { background: #eee9f7; }
-.birthday i,
-.birthday h3 { color: #7c3aed; }
+.birthday i, .birthday h3 { color: #7c3aed; }
 
 .anniversary { background: #f5eaea; }
-.anniversary i,
-.anniversary h3 { color: #ef4444; }
+.anniversary i, .anniversary h3 { color: #ef4444; }
 
 .graduation { background: #e8eef9; }
-.graduation i,
-.graduation h3 { color: #2563eb; }
+.graduation i, .graduation h3 { color: #2563eb; }
 
 .corporate { background: #e7f3ec; }
-.corporate i,
-.corporate h3 { color: #16a34a; }
+.corporate i, .corporate h3 { color: #16a34a; }
+
+/* occasion responsive */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .card {
+    max-width: 180px;
+    width: 100%;
+  }
+
+  .card-container .card:nth-child(5) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .card-container {
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+  }
+
+  .card {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .card-container .card:nth-child(1) { grid-column: 1 / 3; }
+  .card-container .card:nth-child(2) { grid-column: 3 / 5; }
+  .card-container .card:nth-child(3) { grid-column: 5 / 7; }
+  .card-container .card:nth-child(4) { grid-column: 2 / 4; }
+  .card-container .card:nth-child(5) { grid-column: 4 / 6; }
+}
+
+@media (min-width: 1101px) {
+  .card-container {
+    grid-template-columns: repeat(5, 200px);
+    justify-content: center;
+  }
+}
 
 
-/* ===== CTA ===== */
+/* ===== CALL TO ACTION ===== */
 .cta {
   padding: 40px 90px;
   text-align: center;
