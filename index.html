@@ -11,13 +11,17 @@
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <div class="logo-icon">A</div>
-    <span>ANYO Woodcrafts</span>
-  </div>
+  <a href="index.html" class="logo">
+  <div class="logo-icon">A</div>
+  <span>ANYO Woodcrafts</span>
+</a>
 
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
+  <div class="menu-toggle" id="menu-toggle">
+  <span id="menu-icon">☰</span>
+</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -84,10 +88,8 @@
   </div>
 
   <div class="featured-btn">
-    <a href="PRODUCTS.html">
-      <a href="products.html"><button>View All Products</button></a>
-    </a>
-  </div>
+  <a href="products.html"><button>View All Products</button></a>
+</div>
 </section>
 
 <section class="occasion-section">
@@ -133,10 +135,10 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-col">
-      <div class="logo">
-        <div class="logo-icon">A</div>
-        <span>ANYO Woodcrafts</span>
-      </div>
+      <div class="footer-logo">
+  <div class="logo-icon">A</div>
+  <span>ANYO Woodcrafts</span>
+    </div>
       <p>
         Personalized wooden gifts and laser-engraved treasures
         for your special moments
@@ -189,6 +191,8 @@ window.addEventListener("scroll", function () {
   hero.style.backgroundPositionY = offset * 0.5 + "px";
 });
 </script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
