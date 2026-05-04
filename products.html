@@ -11,14 +11,18 @@
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <div class="logo-icon">A</div>
-    <span>ANYO Woodcrafts</span>
+  <a href="index.html" class="logo">
+  <div class="logo-icon">A</div>
+  <span>ANYO Woodcrafts</span>
+</a>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
   </div>
 
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="products.html">Products</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -145,10 +149,10 @@
   <div class="footer-container">
 
     <div class="footer-col">
-      <div class="logo">
-        <div class="logo-icon">A</div>
-        <span>ANYO Woodcrafts</span>
-      </div>
+      <div class="footer-logo">
+  <div class="logo-icon">A</div>
+  <span>ANYO Woodcrafts</span>
+    </div>
       <p>
         Personalized wooden gifts and laser-engraved treasures
         for your special moments
@@ -206,6 +210,8 @@ document.querySelector("form")?.addEventListener("submit", function(e) {
   this.reset();
 });
 </script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
