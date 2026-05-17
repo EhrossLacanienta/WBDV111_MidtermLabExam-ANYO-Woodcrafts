@@ -1,3 +1,4 @@
+// ===== FORM ELEMENTS =====
 const form = document.getElementById("contactForm");
 
 const nameInput = document.getElementById("name");
@@ -12,101 +13,131 @@ const messageError = document.getElementById("messageError");
 
 const popup = document.getElementById("successPopup");
 
-/* ======================
-   UTIL: CLEAR ERRORS
-====================== */
+
+
+/* ===== CLEAR ERRORS ===== */
 function clearAllErrors() {
-  document.querySelectorAll(".error").forEach(el => el.textContent = "");
-  document.querySelectorAll("input, textarea").forEach(el => el.classList.remove("error-border"));
+
+  document.querySelectorAll(".error").forEach(error => {
+    error.textContent = "";
+  });
+
+  document.querySelectorAll("input, textarea").forEach(input => {
+    input.classList.remove("error-border");
+  });
+
 }
 
-/* ======================
-   VALIDATIONS
-====================== */
+
+
+/* ===== SHOW ERROR ===== */
+function showError(input, errorElement, message) {
+
+  errorElement.textContent = message;
+  input.classList.add("error-border");
+
+}
+
+
+
+/* ===== VALIDATIONS ===== */
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function isValidPHNumber(number) {
-  return /^09\d{9}$/.test(number); // 09 + 9 digits = 11 total
+  return /^09\d{9}$/.test(number);
 }
 
-/* ======================
-   INPUT RULES
-====================== */
 
-// NAME (no numbers)
+
+/* ===== INPUT RULES ===== */
+
+// NAME → no numbers
 nameInput.addEventListener("input", () => {
   nameInput.value = nameInput.value.replace(/[0-9]/g, "");
 });
 
-// PHONE (numbers only)
+// PHONE → numbers only
 phoneInput.addEventListener("input", () => {
   phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
 });
 
-/* ======================
-   SUBMIT VALIDATION
-====================== */
-form.addEventListener("submit", function(e) {
+
+
+/* ===== FORM SUBMIT ===== */
+form.addEventListener("submit", (e) => {
+
   e.preventDefault();
 
   clearAllErrors();
+
   let valid = true;
 
-  // NAME
-  if (nameInput.value.trim() === "") {
-    nameError.textContent = "Name is required";
-    nameInput.classList.add("error-border");
+  // trimmed values
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const email = emailInput.value.trim();
+  const message = messageInput.value.trim();
+
+
+
+  /* ===== NAME ===== */
+  if (name === "") {
+    showError(nameInput, nameError, "Name is required");
     valid = false;
   }
 
-  // PHONE (PH STRICT)
-  if (phoneInput.value.trim() === "") {
-    phoneError.textContent = "Contact number is required";
-    phoneInput.classList.add("error-border");
+
+
+  /* ===== PHONE ===== */
+  if (phone === "") {
+    showError(phoneInput, phoneError, "Contact number is required");
     valid = false;
-  } 
-  else if (!isValidPHNumber(phoneInput.value)) {
-    phoneError.textContent = "Invalid PH number (must start with 09 and be 11 digits)";
-    phoneInput.classList.add("error-border");
+
+  } else if (!isValidPHNumber(phone)) {
+    showError(
+      phoneInput,
+      phoneError,
+      "Invalid PH number (must start with 09 and be 11 digits)"
+    );
     valid = false;
   }
 
-  // EMAIL (SUBMIT ONLY — NO REALTIME)
-  if (emailInput.value.trim() === "") {
-    emailError.textContent = "Email is required";
-    emailInput.classList.add("error-border");
+
+
+  /* ===== EMAIL ===== */
+  if (email === "") {
+    showError(emailInput, emailError, "Email is required");
     valid = false;
-  } 
-  else if (!emailInput.value.includes("@")) {
-    emailError.textContent = "Email must contain @";
-    emailInput.classList.add("error-border");
-    valid = false;
-  }
-  else if (!isValidEmail(emailInput.value)) {
-    emailError.textContent = "Invalid email format (example: name@gmail.com)";
-    emailInput.classList.add("error-border");
+
+  } else if (!isValidEmail(email)) {
+    showError(emailInput, emailError, "Please enter a valid email address");
     valid = false;
   }
 
-  // MESSAGE
-  if (messageInput.value.trim() === "") {
-    messageError.textContent = "Message is required";
-    messageInput.classList.add("error-border");
+
+
+  /* ===== MESSAGE ===== */
+  if (message === "") {
+    showError(messageInput, messageError, "Message is required");
     valid = false;
   }
 
-  // SUCCESS
+
+
+  /* ===== SUCCESS ===== */
   if (valid) {
     popup.classList.add("show");
     form.reset();
   }
+
 });
 
-/* ======================
-   POPUP CLOSE
-====================== */
+
+
+/* ===== CLOSE POPUP ===== */
 function closePopup() {
   popup.classList.remove("show");
-}   
+  nameInput.focus();
+}
