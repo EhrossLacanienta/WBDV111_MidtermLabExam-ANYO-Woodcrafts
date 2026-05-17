@@ -28,10 +28,12 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
   z-index: 2;
 }
 
@@ -60,34 +62,80 @@
   font-size: 16px;
   border: none;
   border-radius: 6px;
-  background-color: #e07b3a;
+  background: #8B5E3C;
   color: #fff;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .hero-text button:hover {
-  background-color: #c9652e;
+  background: #A47148;
   transform: translateY(-2px);
 }
 
-/* scroll indicator */
-.hero::after {
-  content: "⌄";
+
+/* ===== HERO RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 42px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-text button {
+    padding: 12px 24px;
+  }
+}
+
+
+
+/* ===== SCROLL ===== */
+.scroll-down {
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
+}
+
+.scroll-down a {
   color: white;
   font-size: 28px;
-  opacity: 0.8;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: bounce 1.8s infinite;
+  transition: all 0.3s ease;
 }
+
+.scroll-down a:hover {
+  color: #e07b3a;
+  transform: translateY(0) scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
 
 
 /* ===== ABOUT SECTION ===== */
 .about {
-  background-color: #FAF3F4;
-  padding: 70px 100px;
+  background: #f3efe9;
+  padding: 100px;
   text-align: center;
 }
 
@@ -114,23 +162,40 @@
   padding: 12px 28px;
   font-size: 15px;
   border-radius: 8px;
-  border: 2px solid #e07b3a;
+  border: 2px solid #8B5E3C;
   background: transparent;
-  color: #e07b3a;
+  color: #8B5E3C;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .about button:hover {
-  background-color: #e07b3a;
+  background: #8B5E3C;
   color: #fff;
 }
+
+
+/* ===== ABOUT RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 25px;
+  }
+
+  .about h1 {
+    font-size: 34px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+}
+
 
 
 /* ===== FEATURED SECTION ===== */
 .featured {
   background: #f6f6f6;
-  padding: 90px 40px;
+  padding: 150px 40px;
   text-align: center;
 }
 
@@ -151,6 +216,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+
   max-width: 1200px;
   margin: auto;
 }
@@ -159,10 +225,11 @@
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
+
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
   transition: all 0.3s ease;
   cursor: pointer;
-  position: relative;
 }
 
 .featured-card:hover {
@@ -191,19 +258,22 @@
   padding: 14px 32px;
   border-radius: 10px;
   border: none;
-  background: #444;
+
+  background: #8B5E3C;
   color: #fff;
+
   font-size: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .featured-btn button:hover {
-  background: #2f2f2f;
+  background: #A47148;
   transform: translateY(-2px);
 }
 
-/* featured responsive */
+
+/* ===== FEATURED RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -211,21 +281,29 @@
 }
 
 @media (max-width: 600px) {
+  .featured {
+    padding: 100px 20px;
+  }
+
   .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
   .featured-card img {
     height: 180px;
   }
+
+  .featured h2 {
+    font-size: 34px;
+  }
 }
 
 
-/* ===== OCCASION SECTION ===== */
+
+/* ===== OCCATION SECTION ===== */
 .occasion-section {
-  background: #f6f0f1;
-  padding: 100px 20px;
+  background: #f3efe9;
+  padding: 130px 20px;
   text-align: center;
 }
 
@@ -252,10 +330,16 @@
 .card {
   width: 100%;
   max-width: 200px;
+
   padding: 35px 20px;
   border-radius: 20px;
+
   background: #fff;
   transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
 }
 
 .card i {
@@ -268,27 +352,55 @@
   font-weight: 500;
 }
 
-.card:hover {
-  transform: translateY(-8px);
+
+/* ===== CARD COLORS ===== */
+.wedding {
+  background: #f3e8ec;
 }
 
-/* occasion color variants */
-.wedding { background: #f3e8ec; }
-.wedding i, .wedding h3 { color: #e91e63; }
+.wedding i,
+.wedding h3 {
+  color: #e91e63;
+}
 
-.birthday { background: #eee9f7; }
-.birthday i, .birthday h3 { color: #7c3aed; }
+.birthday {
+  background: #eee9f7;
+}
 
-.anniversary { background: #f5eaea; }
-.anniversary i, .anniversary h3 { color: #ef4444; }
+.birthday i,
+.birthday h3 {
+  color: #7c3aed;
+}
 
-.graduation { background: #e8eef9; }
-.graduation i, .graduation h3 { color: #2563eb; }
+.anniversary {
+  background: #f5eaea;
+}
 
-.corporate { background: #e7f3ec; }
-.corporate i, .corporate h3 { color: #16a34a; }
+.anniversary i,
+.anniversary h3 {
+  color: #ef4444;
+}
 
-/* occasion responsive */
+.graduation {
+  background: #e8eef9;
+}
+
+.graduation i,
+.graduation h3 {
+  color: #2563eb;
+}
+
+.corporate {
+  background: #e7f3ec;
+}
+
+.corporate i,
+.corporate h3 {
+  color: #16a34a;
+}
+
+
+/* ===== OCCASION RESPONSIVE ===== */
 @media (max-width: 600px) {
   .card-container {
     grid-template-columns: repeat(2, 1fr);
@@ -297,7 +409,6 @@
 
   .card {
     max-width: 180px;
-    width: 100%;
   }
 
   .card-container .card:nth-child(5) {
@@ -312,32 +423,43 @@
     justify-items: center;
   }
 
-  .card {
-    max-width: 200px;
-    width: 100%;
+  .card-container .card:nth-child(1) {
+    grid-column: 1 / 3;
   }
 
-  .card-container .card:nth-child(1) { grid-column: 1 / 3; }
-  .card-container .card:nth-child(2) { grid-column: 3 / 5; }
-  .card-container .card:nth-child(3) { grid-column: 5 / 7; }
-  .card-container .card:nth-child(4) { grid-column: 2 / 4; }
-  .card-container .card:nth-child(5) { grid-column: 4 / 6; }
+  .card-container .card:nth-child(2) {
+    grid-column: 3 / 5;
+  }
+
+  .card-container .card:nth-child(3) {
+    grid-column: 5 / 7;
+  }
+
+  .card-container .card:nth-child(4) {
+    grid-column: 2 / 4;
+  }
+
+  .card-container .card:nth-child(5) {
+    grid-column: 4 / 6;
+  }
 }
 
 @media (min-width: 1101px) {
   .card-container {
     grid-template-columns: repeat(5, 200px);
-    justify-content: center;
   }
 }
 
 
-/* ===== CALL TO ACTION ===== */
+
+/* ===== CTA SECTION ===== */
 .cta {
   padding: 40px 90px;
   text-align: center;
-  background: linear-gradient(135deg, #a97447, #d97b42);
+
+  background: #A47148;
   color: white;
+
   margin-bottom: 80px;
 }
 
@@ -363,10 +485,13 @@
 .cta button {
   padding: 14px 34px;
   font-size: 16px;
+
   border: none;
   border-radius: 10px;
+
   background: #eee;
   color: #6b4a2b;
+
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -374,4 +499,28 @@
 .cta button:hover {
   background: #fff;
   transform: translateY(-3px);
+}
+
+
+/* ===== CTA RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .cta {
+    padding: 70px 25px;
+  }
+
+  .cta h1 {
+    font-size: 32px;
+  }
+
+  .cta p {
+    font-size: 16px;
+  }
+}
+
+.fb {
+  background: #1877f2;
+}
+
+.shopee {
+  background: #ee4d2d;
 }
