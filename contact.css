@@ -1,12 +1,15 @@
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .contact-hero {
   height: 40vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #a97447, #d97b42);
+
+  background: #8B5E3C;
   color: white;
+
   text-align: center;
 }
 
@@ -19,22 +22,47 @@
   margin-top: 10px;
 }
 
-/* ===== MAIN CONTACT SECTION LAYOUT ===== */
+/* ===== HERO RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 38px;
+  }
+
+  .contact-hero p {
+    font-size: 14px;
+  }
+}
+
+
+
+/* ===== CONTACT SECTION ===== */
 .contact-section {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
+
   gap: 80px;
   padding: 100px 80px;
-  background: #f4efe9;
+
+  background: #f3efe9;
+
   align-items: stretch;
 }
 
-/* Ensure equal height for both columns */
 .contact-form,
 .contact-info {
   display: flex;
   flex-direction: column;
 }
+
+/* ===== CONTACT RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+  }
+}
+
+
 
 /* ===== CONTACT FORM ===== */
 .contact-form h2 {
@@ -52,48 +80,58 @@
 }
 
 .contact-form label {
+  display: block;
+
   font-size: 14px;
   font-weight: 500;
-  display: block;
+
   margin-bottom: 6px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+
   padding: 14px;
   border-radius: 10px;
   border: 1px solid #ddd;
+
   background: #fafafa;
+
   font-size: 14px;
-  transition: 0.2s;
+
+  transition: 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1px solid #d97b42;
   background: #fff;
+
   outline: none;
 }
 
-/* Larger message textarea */
 .contact-form textarea {
   height: 150px;
   resize: none;
 }
 
-/* Submit button styling */
 .contact-form button {
+  width: 100%;
+
   margin-top: 10px;
   padding: 18px;
-  width: 100%;
+
   border: none;
   border-radius: 10px;
-  background: #d97b42;
+
+  background: #8B5E3C;
   color: white;
+
   font-size: 16px;
+
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .contact-form button:hover {
@@ -101,7 +139,9 @@
   transform: translateY(-2px);
 }
 
-/* ===== FORM ERROR STATES ===== */
+
+
+/* ===== FORM ERROR ===== */
 .error {
   color: red;
   font-size: 12px;
@@ -112,7 +152,9 @@
   border: 1px solid red !important;
 }
 
-/* ===== CONTACT INFO (RIGHT SIDE) ===== */
+
+
+/* ===== CONTACT INFO ===== */
 .contact-info h2 {
   font-size: 30px;
   margin-bottom: 10px;
@@ -126,21 +168,24 @@
 .info-box {
   display: flex;
   gap: 15px;
+
   margin-bottom: 25px;
 }
 
 .contact-info .icon {
   width: 45px;
   height: 45px;
-  background: #b7793b;
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background: #b7793b;
   color: white;
 }
 
-/* Contact links */
 .info-box a {
   text-decoration: none;
   color: #444;
@@ -150,9 +195,12 @@
   color: #d97b42;
 }
 
-/* ===== SOCIAL MEDIA ===== */
+
+
+/* ===== SOCIALS ===== */
 .social-text {
   margin: 5px 0 8px;
+
   font-size: 14px;
   color: #555;
 }
@@ -165,20 +213,24 @@
 .circle {
   width: 40px;
   height: 40px;
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: white;
 }
 
-.fb { background: #1877f2; }
-.shopee { background: #ee4d2d; }
 
-/* ===== BUSINESS HOURS BOX ===== */
+
+/* ===== BUSINESS HOURS ===== */
 .hours-box {
-  margin-top: auto; /* Pushes the box to the bottom */
+  margin-top: auto;
+
   background: white;
+
   padding: 25px;
   border-radius: 12px;
 }
@@ -186,28 +238,27 @@
 .hours-row {
   display: flex;
   justify-content: space-between;
+
   margin-bottom: 8px;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== HOURS RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .contact-section {
-    grid-template-columns: 1fr;
-    padding: 50px 20px;
-  }
-
   .hours-box {
-    margin-top: 30px; 
+    margin-top: 30px;
   }
 }
 
-/* ===== SUCCESS POPUP MODAL ===== */
+
+
+/* ===== POPUP ===== */
 .popup {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+
   width: 100%;
   height: 100%;
+
   background: rgba(0,0,0,0.5);
 
   display: flex;
@@ -216,31 +267,36 @@
 
   opacity: 0;
   pointer-events: none;
+
   transition: 0.3s ease;
 
   z-index: 2000;
 }
 
-/* Visible state for popup */
 .popup.show {
   opacity: 1;
   pointer-events: auto;
 }
 
 .popup-content {
+  width: 320px;
+
   background: #fff;
+
   padding: 35px 30px;
   border-radius: 16px;
+
   text-align: center;
-  width: 320px;
+
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
   animation: popupFade 0.3s ease;
 }
 
-/* Success icon */
 .popup-content i {
   font-size: 45px;
   color: #22c55e;
+
   margin-bottom: 15px;
 }
 
@@ -253,13 +309,15 @@
   margin-bottom: 20px;
 }
 
-/* Popup button */
 .popup-content button {
   padding: 10px 25px;
+
   border: none;
   border-radius: 8px;
+
   background: #d97b42;
   color: white;
+
   cursor: pointer;
 }
 
@@ -267,14 +325,26 @@
   background: #c96a34;
 }
 
-/* Popup animation */
+/* ===== POPUP ANIMATION ===== */
 @keyframes popupFade {
   from {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+
+
+/* ===== EXTRA COLORS ===== */
+.fb {
+  background: #1877f2;
+}
+
+.shopee {
+  background: #ee4d2d;
 }
